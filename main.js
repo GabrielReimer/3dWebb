@@ -22,6 +22,7 @@ const material = new THREE.MeshStandardMaterial( {color: 0x01332d, wireframe: tr
 const icosa = new THREE.Mesh(geometry, material);
 
 scene.add(icosa);
+
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(15, 15, 15);
 const ambientLight = new THREE.AmbientLight(0xffffff);
