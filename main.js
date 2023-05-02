@@ -37,9 +37,9 @@ const controls = new OrbitControls(camera, renderer.domElement);
 function animate() {
   requestAnimationFrame(animate);
 
-  icosa.rotation.x += 0.01;
-  icosa.rotation.y += 0.005;
-  icosa.rotation.z += 0.01;
+  icosa.rotation.x += 0.009;
+  icosa.rotation.y += 0.003;
+  icosa.rotation.z += 0.009;
   renderer.render(scene, camera);
 }
 
