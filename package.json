@@ -1,16 +1,15 @@
 {
+  "homepage": "https://GabrielReimer.github.io/3dWebb",
   "name": "spectral",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "vite build",
-    "preview": "vite preview",
-    "Spectral": "start-Spectral -p 9001 -c Spectral",
-    "Spectral:build": "build-Spectral -c Spectral",
-    "predeploy": "npm run Spectral:build",
-    "deploy": "gh-pages -d Spectral"
+    "preview": "vite preview"
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
