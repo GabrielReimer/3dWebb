@@ -16,7 +16,7 @@ loader.load('3dModels/star_destroyer.glb', function (gltf) {
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#bg'),
@@ -24,9 +24,9 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
-camera.position.setX(1);
-camera.position.setY(30);
+camera.position.setZ(700);
+camera.position.setX(-300);
+camera.position.setY(200);
 
 renderer.render(scene, camera);
 
@@ -43,10 +43,11 @@ const apa = new THREE.Mesh(
 scene.add(apa);
 scene.add(icosa);
 
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(15, 15, 15);
-const ambientLight = new THREE.AmbientLight(0xffffff);
-scene.add(pointLight, ambientLight);
+const pointLight = new THREE.PointLight(0xffffff, 1, 1500);
+pointLight.position.set(-300, 200, 600);
+// const ambientLight = new THREE.AmbientLight(0xffffff);
+// scene.add(ambientLight);
+scene.add(pointLight);
 
 const lightHelper = new THREE.PointLightHelper(pointLight)
 const gridHelper = new THREE.GridHelper(200, 50);
@@ -56,7 +57,6 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate() {
   requestAnimationFrame(animate);
-  icosa.position.x += 5;
   icosa.rotation.x += 0.009;
   icosa.rotation.y += 0.003;
   icosa.rotation.z += 0.009;
