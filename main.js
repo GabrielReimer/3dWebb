@@ -1,6 +1,18 @@
 import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const loader = new GLTFLoader();
+
+loader.load('3dModels/star_destroyer.glb', function (gltf) {
+
+  scene.add(gltf.scene);
+
+}, undefined, function (error) {
+
+  console.error(error);
+
+});
 
 const scene = new THREE.Scene();
 
@@ -18,10 +30,17 @@ camera.position.setY(30);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.IcosahedronGeometry(10, 3, 16, 100);
+const geometry = new THREE.IcosahedronGeometry(10, 3, 16, 10);
 const material = new THREE.MeshStandardMaterial( {color: 0x01332d, wireframe: true });
 const icosa = new THREE.Mesh(geometry, material);
 
+const spheretexture = new THREE.TextureLoader().load('bild4.jpg');
+const apa = new THREE.Mesh(
+  new THREE.SphereGeometry(20, 100, 16, 10),
+  new THREE.MeshStandardMaterial( { map: spheretexture } )
+);
+
+scene.add(apa);
 scene.add(icosa);
 
 const pointLight = new THREE.PointLight(0xffffff);
@@ -37,7 +56,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 function animate() {
   requestAnimationFrame(animate);
-
+  icosa.position.x += 5;
   icosa.rotation.x += 0.009;
   icosa.rotation.y += 0.003;
   icosa.rotation.z += 0.009;
