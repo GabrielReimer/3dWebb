@@ -31,7 +31,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(10000);
 camera.position.setX(-300);
 camera.position.setY(150);
-camera.rotatetY(Math.PI / -4);
+camera.rotateY(Math.PI / -4);
 
 renderer.render(scene, camera);
 
