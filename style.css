@@ -129,7 +129,7 @@ section {
 }
 
 .accordion {
-  background: #121212;
+  background: var(--dark-bg);
   color: white;
   padding: 1rem;
 }
