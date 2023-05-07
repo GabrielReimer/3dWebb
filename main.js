@@ -38,16 +38,18 @@ renderer.render(scene, camera);
 /*const geometry = new THREE.IcosahedronGeometry(10, 3, 16, 10);
 const material = new THREE.MeshStandardMaterial( {color: 0x01332d, wireframe: true });
 const icosa = new THREE.Mesh(geometry, material);
-scene.add(icosa);
+scene.add(icosa);*/
 
-const spheretexture = new THREE.TextureLoader().load('/img/img2.jpg');
-const apa = new THREE.Mesh(
-  new THREE.SphereGeometry(20, 100, 16, 10),
-  new THREE.MeshStandardMaterial( { map: spheretexture } )
+const spheretexture = new THREE.TextureLoader().load("/img/planetmap2.jpg");
+const planet = new THREE.Mesh(
+  new THREE.SphereGeometry(600, 100, 16, 100),
+  new THREE.MeshStandardMaterial({ map: spheretexture })
 );
-scene.add(apa);*/
+planet.rotateX(-Math.PI / 2);
+planet.position.set(1000, -500, 1000);
+scene.add(planet);
 
-const pointLight = new THREE.PointLight(0xffffff, 1, 1500);
+const pointLight = new THREE.PointLight(0xffffff, 1, 1700);
 pointLight.position.set(-300, 200, 600);
 scene.add(pointLight);
 
@@ -65,7 +67,7 @@ function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
   camera.position.z = 2000 + t * 1;
-  //camera.rotation.y = (Math.PI / -4) + (t * 0.0002);
+  camera.rotation.y = Math.PI / -4 + t * 0.0001;
   console.log(t);
 }
 document.body.onscroll = moveCamera;
