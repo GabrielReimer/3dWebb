@@ -1,12 +1,43 @@
+@import url("https://use.typekit.net/jmk3xov.css");
 
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+}
 
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
-  --spacing: 350px;
-
+  --spacing: 3;
+  --red-grad: linear-gradient(-90deg, rgba(159, 11, 11, 1) 2%, rgba(0, 0, 0, 1) 100%);
+  --blue-grad: linear-gradient(-90deg, rgba(159, 11, 11, 1) 2%, rgba(0, 0, 0, 1) 100%);
+  --pink-blue-grad: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(251, 204, 214, 1) 100%);
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  font-family: elevon, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  height: 400vh;
 }
 
 main {
@@ -19,28 +50,80 @@ main {
   padding: 0px; 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-}
-
-h1,
-h2,
-h3,
-blockquote {
-  font-family: elevon, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
+  gap: 4rem;
 }
 
 section {
-  grid-column: 2 / 8;
+  grid-column: 7 / span 5;
   padding: 1rem;
   background: var(--dark-bg);
   font-size: 1.25rem;
   line-height: 1.5;
-  margin-bottom: var(--spacing);
 } 
+
+.wrapper {
+  z-index: 99;
+  grid-column: 2 / 8;
+  margin-inline: auto;
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+}
+
+.accordion-content[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-content>div {
+  overflow: hidden;
+}
+
+.accordion {
+  background: #121212;
+  color: white;
+  padding: 1rem;
+}
+
+.accordion-panel {
+  padding: 1rem;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: var(--red-grad);
+}
+
+.accordion h2 {
+  position: relative;
+}
+
+.accordion-trigger {
+  background: transparent;
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.accordion-trigger::before,
+.accordion-trigger::after {
+  position: absolute;
+  right: 1em;
+  content: "";
+  display: block;
+  width: 1em;
+  height: 5px;
+  background: currentcolor;
+  transition: transform 500ms;
+}
+
+.accordion-trigger::after {
+  rotate: 90deg;
+  translate: 0 -1.5em;
+}
+
+.accordion-trigger[aria-expanded="true"]::before,
+.accordion-trigger[aria-expanded="true"]::after {
+  transform: rotate(45deg);
+}
