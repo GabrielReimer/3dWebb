@@ -19,9 +19,7 @@ function toggleAccordion(panelToActivate) {
       .querySelector(".accordion-content")
       .setAttribute("aria-hidden", true);
   } else {
-    panelToActivate
-    .querySelector("button")
-    .setAttribute("aria-expanded", true);
+    panelToActivate.querySelector("button").setAttribute("aria-expanded", true);
 
     panelToActivate
       .querySelector(".accordion-content")
