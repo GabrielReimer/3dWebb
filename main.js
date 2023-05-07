@@ -34,7 +34,7 @@ const geometry = new THREE.IcosahedronGeometry(10, 3, 16, 10);
 const material = new THREE.MeshStandardMaterial( {color: 0x01332d, wireframe: true });
 const icosa = new THREE.Mesh(geometry, material);
 
-const spheretexture = new THREE.TextureLoader().load('bild4.jpg');
+const spheretexture = new THREE.TextureLoader().load('/img/img2.png');
 const apa = new THREE.Mesh(
   new THREE.SphereGeometry(20, 100, 16, 10),
   new THREE.MeshStandardMaterial( { map: spheretexture } )
