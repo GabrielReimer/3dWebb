@@ -4,7 +4,7 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
 
-loader.load(
+const a = loader.load(
   "3dModels/star_destroyer.glb",
   function (gltf) {
     scene.add(gltf.scene);
@@ -31,7 +31,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(10000);
 camera.position.setX(-300);
 camera.position.setY(150);
-camera.rotateY(Math.PI / -4);
+camera.rotateY(Math.PI / -6);
 
 renderer.render(scene, camera);
 
@@ -46,19 +46,22 @@ const planet = new THREE.Mesh(
   new THREE.MeshStandardMaterial({ map: spheretexture })
 );
 planet.rotateX(-Math.PI / 2);
-planet.position.set(1000, -500, 1000);
+planet.position.set(2000, -500, 5500);
 scene.add(planet);
 
-const pointLight = new THREE.PointLight(0xffffff, 1, 1700);
-pointLight.position.set(-300, 200, 600);
-scene.add(pointLight);
+const pointLight = new THREE.PointLight(0xffffff, 1, 2000);
+pointLight.position.set(-300, 200, 800);
+const pointLight2 = new THREE.PointLight(0xffddaa, 1, 3500);
+pointLight2.position.set(300, -200, 800);
+scene.add(pointLight, pointLight2);
 
 /*const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight);*/
 
 const lightHelper = new THREE.PointLightHelper(pointLight);
+const lightHelper2 = new THREE.PointLightHelper(pointLight2);
 const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, gridHelper);
+scene.add(lightHelper, lightHelper2, gridHelper);
 
 /*const controls = new OrbitControls(camera, renderer.domElement);*/
 
@@ -67,7 +70,10 @@ function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
   camera.position.z = 2000 + t * 1;
-  camera.rotation.y = Math.PI / -4 + t * 0.0001;
+  camera.rotation.y = Math.PI / -6 + t * 0.0002;
+
+  planet.position.z = t * 1;
+
   console.log(t);
 }
 document.body.onscroll = moveCamera;
@@ -77,9 +83,9 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
 
-  /*icosa.rotation.x += 0.009;
-  icosa.rotation.y += 0.003;
-  icosa.rotation.z += 0.009;*/
+  planet.rotation.x += 0.0001;
+  planet.rotation.z += 0.0001;
+  planet.rotation.y += 0.0001;
 
   renderer.render(scene, camera);
 }
