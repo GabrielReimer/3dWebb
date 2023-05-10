@@ -70,7 +70,7 @@ function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
   camera.position.z = 2000 + t * 1;
-  camera.rotation.y = Math.PI / -6 + t * 0.0002;
+  camera.rotation.y = Math.PI / -8 + t * 0.0002;
 
   planet.position.z = t * 1;
 
