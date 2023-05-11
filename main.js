@@ -40,7 +40,7 @@ const material = new THREE.MeshStandardMaterial( {color: 0x01332d, wireframe: tr
 const icosa = new THREE.Mesh(geometry, material);
 scene.add(icosa);*/
 
-const spheretexture = new THREE.TextureLoader().load("/img/planetmap7.jpg");
+const spheretexture = new THREE.TextureLoader().load("/img/planetmap13.jpg");
 const planet = new THREE.Mesh(
   new THREE.SphereGeometry(600, 100, 16, 100),
   new THREE.MeshStandardMaterial({ map: spheretexture })
