@@ -71,7 +71,7 @@ nav {
 }
 
 nav > ul {
-  width: 100em;
+  width: 100%;
   background: var(--grey-hide);
   padding: 1rem;
   display: inherit;
