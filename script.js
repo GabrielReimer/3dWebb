@@ -26,3 +26,5 @@ function toggleAccordion(panelToActivate) {
       .setAttribute("aria-hidden", false);
   }
 }
+
+//var test = $("#ruta").val();

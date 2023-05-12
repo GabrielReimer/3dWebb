@@ -24,7 +24,7 @@
 
     <div class="page">
       <div class="wrapper">
-        <h1 style="text-align: center; font-size: 2rem">?</h1>
+        <h1 style="text-align: center; font-size: 2rem">JOIN THE EMPIRE</h1>
 
         <div class="accordion">
           <div class="accordion-panel">
@@ -164,10 +164,11 @@
       </div>
 
       <section>
-        <button>a</button>
+        <button class="modal-button" open-modal>Open modal</button>
 
-        <dialog>
-          <h2>Spectral</h2>
+        <dialog item-modal aria-hidden="true">
+          <h3>Spectral</h3>
+          <button class="modal-button" close-modal>Close modal</button>
         </dialog>
       </section>
       <section></section>
@@ -177,6 +178,20 @@
       <footer></footer>
     </div>
 
+    <script>
+      const modal = document.querySelector("[item-modal]");
+      const openbutton = document.querySelector("[open-modal]");
+      const closebutton = document.querySelector("[close-modal]");
+
+      openbutton.addEventListener("click", () => {
+        modal.setAttribute("aria-hidden", false);
+        modal.showModal();
+      });
+      closebutton.addEventListener("click", () => {
+        modal.setAttribute("aria-hidden", true);
+        modal.close();
+      });
+    </script>
     <script src="/script.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
