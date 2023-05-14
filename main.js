@@ -81,12 +81,11 @@ moveCamera();
 
 /*Animate*/
 function animate() {
-  requestAnimationFrame(animate);
-
   planet.rotation.x += 0.0001;
   planet.rotation.z += 0.0001;
   planet.rotation.y += 0.0001;
 
   renderer.render(scene, camera);
+  requestAnimationFrame(animate);
 }
 animate();
