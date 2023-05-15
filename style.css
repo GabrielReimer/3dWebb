@@ -5,7 +5,12 @@ canvas {
   top: 0;
   left: 0;
 }
-
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 3;
@@ -35,6 +40,12 @@ canvas {
   /*font-family: brandon-grotesque, sans-serif;*/
   font-weight: 400;
   font-style: normal;
+}
+.red-boarder {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: var(--red-grad);
 }
 
 * {
@@ -123,14 +134,11 @@ dialog[aria-hidden="false"] {
   z-index: 10;
   background: var(--dark-bg);
   padding: 1rem;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: var(--red-grad);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
 }
+dialog fieldset,
 dialog p {
   grid-column: 1 / span 6;
   grid-row: 2 / span 4;
@@ -146,8 +154,11 @@ dialog > h3 {
   text-align: center;
   font-size: 1.5rem;
 }
-
-.modal-button {
+input[type="radio"]:checked {
+  background-color: black;
+}
+.modal-button,
+#done {
   background: var(--red-radialgrad);
   /* border: 1px solid white; */
   bottom: 0px;

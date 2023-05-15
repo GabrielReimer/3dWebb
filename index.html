@@ -34,7 +34,7 @@
                 aria-expanded="true"
                 aria-controls="panel1-content"
               >
-                Grid is awesome
+                Why join?
               </button>
             </h2>
             <div
@@ -60,7 +60,7 @@
                 aria-expanded="false"
                 aria-controls="panel2-content"
               >
-                It's full of neat tricks
+                We are all for peace
               </button>
             </h2>
             <div
@@ -89,7 +89,7 @@
                 aria-expanded="false"
                 aria-controls="panel3-content"
               >
-                Tell me more
+                You are needed
               </button>
             </h2>
             <div
@@ -115,7 +115,7 @@
                 aria-expanded="false"
                 aria-controls="panel4-content"
               >
-                Lorem ipsum dolor sit
+                Secure the galaxy
               </button>
             </h2>
             <div
@@ -142,7 +142,7 @@
                 aria-expanded="false"
                 aria-controls="panel5-content"
               >
-                Consectetur adipisicing
+                Payment
               </button>
             </h2>
             <div
@@ -166,8 +166,25 @@
       <section>
         <button class="modal-button" open-modal>Open modal</button>
 
-        <dialog item-modal aria-hidden="true">
+        <dialog class="red-boarder" item-modal aria-hidden="true">
           <h3>Spectral</h3>
+          <!-- <fieldset>
+            <legend class="form-group">Choose one:</legend>
+            <label for="army">Imperial Army</label>
+            <input type="radio" name="department" id="army" />
+            <br />
+            <label for="marines">Imperial Marines</label>
+            <input type="radio" name="department" id="marines" />
+            <br />
+            <label for="navy">Imperial Navy</label>
+            <input type="radio" name="department" id="navy" />
+            <br />
+            <label for="intel">Imperial Intelligence</label>
+            <input type="radio" name="department" id="intel" />
+            <br />
+            <label for="station">Battle Stations</label>
+            <input type="radio" name="department" id="station" />
+          </fieldset> -->
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
             itaque corrupti temporibus praesentium. Magni maxime velit eligendi
@@ -177,27 +194,34 @@
           <button class="modal-button" close-modal>Close modal</button>
         </dialog>
       </section>
-      <section></section>
 
-      <main></main>
+      <section>
+        <h3>Department</h3>
+        <fieldset>
+          <legend class="form-group">Choose one:</legend>
+          <label for="army">Imperial Army</label>
+          <input type="radio" name="department" id="army" />
+          <br />
+          <label for="marines">Imperial Marines</label>
+          <input type="radio" name="department" id="marines" />
+          <br />
+          <label for="navy">Imperial Navy</label>
+          <input type="radio" name="department" id="navy" />
+          <br />
+          <label for="intel">Imperial Intelligence</label>
+          <input type="radio" name="department" id="intel" />
+          <br />
+          <label for="station">Battle Stations</label>
+          <input type="radio" name="department" id="station" />
+          <br />
+          <label for="done"></label>
+          <input type="submit" value="Submit" id="done" class="submit" />
+        </fieldset>
+      </section>
 
       <footer></footer>
     </div>
 
-    <script>
-      const modal = document.querySelector("[item-modal]");
-      const openbutton = document.querySelector("[open-modal]");
-      const closebutton = document.querySelector("[close-modal]");
-
-      openbutton.addEventListener("click", () => {
-        modal.setAttribute("aria-hidden", false);
-        modal.showModal();
-      });
-      closebutton.addEventListener("click", () => {
-        modal.setAttribute("aria-hidden", true);
-        modal.close();
-      });
-    </script>
     <script src="/script.js"></script>
     <script type="module" src="/main.js"></script>
   </body>

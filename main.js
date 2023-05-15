@@ -74,7 +74,7 @@ function moveCamera() {
 
   planet.position.z = t * 1;
 
-  console.log(t);
+  // console.log(t);
 }
 document.body.onscroll = moveCamera;
 moveCamera();

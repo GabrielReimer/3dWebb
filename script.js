@@ -28,3 +28,44 @@ function toggleAccordion(panelToActivate) {
 }
 
 //var test = $("#ruta").val();
+
+/*Modal*/
+const modal = document.querySelector("[item-modal]");
+const openbutton = document.querySelector("[open-modal]");
+const closebutton = document.querySelector("[close-modal]");
+
+openbutton.addEventListener("click", () => {
+  modal.setAttribute("aria-hidden", false);
+  modal.showModal();
+});
+closebutton.addEventListener("click", () => {
+  modal.setAttribute("aria-hidden", true);
+  modal.close();
+});
+
+/*RADIOBUTTONS*/
+const sub = document.querySelector(".submit");
+sub.addEventListener("click", (e) => {
+  console.log("works");
+  if (document.getElementById("army").checked) {
+  } else if (document.getElementById("marines").checked) {
+  } else if (document.getElementById("navy").checked) {
+  } else if (document.getElementById("intel").checked) {
+  } else if (document.getElementById("station").checked) {
+  }
+});
+
+/*function validate() {
+  console.log("works");
+  if (document.getElementById("army").checked) {
+    modal.showModal();
+  } else if (document.getElementById("marines").checked) {
+  } else if (document.getElementById("navy").checked) {
+  } else if (document.getElementById("inte").checked) {
+  } else if (document.getElementById("stations").checked) {
+  }
+}
+function init() {
+  document.getElementById("form").onsubmit = validate;
+}
+window.onload = init;*/
