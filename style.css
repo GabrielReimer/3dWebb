@@ -100,7 +100,7 @@ nav > ul {
 
 li > a {
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: clamp(0.5rem, 2.5vw, 2rem);
   font-weight: 600;
 }
 
@@ -231,4 +231,16 @@ input[type="radio"]:checked {
 .accordion-trigger[aria-expanded="true"]::before,
 .accordion-trigger[aria-expanded="true"]::after {
   transform: rotate(45deg);
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    grid-column: 2 / span 10;
+  }
+  .page {
+    gap: 1rem 0;
+  }
+  section {
+    grid-column: 2 / span 10;
+  }
 }
