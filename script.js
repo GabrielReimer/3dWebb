@@ -45,7 +45,7 @@ closebutton.addEventListener("click", () => {
 
 /*RADIOBUTTONS*/
 const sub = document.querySelector(".submit");
-sub.addEventListener("click", (e) => {
+$('input[type="radio"]').on("change", function (e) {
   console.log("works");
   if (document.getElementById("army").checked) {
   } else if (document.getElementById("marines").checked) {
