@@ -36,7 +36,7 @@ const closebutton = document.querySelector("[close-modal]");
 
 openbutton.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", false);
-  modal.showModal();
+  modal.showDialog();
 });
 closebutton.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", true);
@@ -44,14 +44,24 @@ closebutton.addEventListener("click", () => {
 });
 
 /*RADIOBUTTONS*/
-const sub = document.querySelector(".submit");
+//const stationSub = document.getElementById("station-sub");
+
 $('input[type="radio"]').on("change", function (e) {
   console.log("works");
+
+  $(".modal-button").show();
   if (document.getElementById("army").checked) {
+    $("#army-sub").show();
+    $("#station-sub").hide();
   } else if (document.getElementById("marines").checked) {
+    $("#station-sub").hide();
   } else if (document.getElementById("navy").checked) {
+    $("#station-sub").hide();
   } else if (document.getElementById("intel").checked) {
+    $("#station-sub").hide();
   } else if (document.getElementById("station").checked) {
+    $("#station-sub").show();
+    $("#army-sub").hide();
   }
 });
 
