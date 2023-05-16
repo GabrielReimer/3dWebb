@@ -68,7 +68,7 @@ body {
   font-family: system-ui;
   font-size: 1.25rem;
   line-height: 1.5;
-  height: 400vh;
+  height: 300vh;
 }
 
 header {
@@ -119,34 +119,73 @@ li > a {
 
 section {
   grid-column: 7 / span 5;
+  height: 18vh;
   padding: 1rem;
   background: var(--dark-bg);
-  height: 20rem;
   font-size: 1.25rem;
-  line-height: 1.5;
+}
+
+.modal-button,
+.done {
+  background: var(--red-radialgrad);
+  /* padding: 0.4rem 0.7rem; */
+  text-align: center;
+  border-radius: 6px;
+}
+
+.department {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.department label {
+  margin-right: 0.3vw;
+}
+.department input[type="radio"] {
+  margin-right: 1.58vw;
+}
+
+.sub-catagory {
+  background: var(--dark-bg);
+  justify-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sub-catagory label {
+  margin-right: 0.2vw;
+}
+
+.sub-catagory input[type="radio"] {
+  margin-right: 1.2vw;
 }
 
 dialog[aria-hidden="false"] {
-  width: 35rem;
-  aspect-ratio: 1.5/1;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+  width: 30rem;
+  aspect-ratio: 3/1;
+  left: auto;
+  translate: -73%;
   z-index: 10;
   background: var(--dark-bg);
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
-dialog fieldset,
-dialog p {
+
+dialog .sub-catagory {
   grid-column: 1 / span 6;
-  grid-row: 2 / span 4;
+  grid-row: 1 / span 2;
 }
 dialog > button {
-  grid-column: 3 / span 2;
-  grid-row: 6 / 6;
+  grid-column: 4 / span 2;
+  grid-row: 3 / 3;
+}
+dialog > input[type="submit"] {
+  grid-column: 2 / span 2;
+  grid-row: 3 / 3;
 }
 
 dialog > h3 {
@@ -155,44 +194,29 @@ dialog > h3 {
   text-align: center;
   font-size: 1.5rem;
 }
+
 input[type="radio"]:checked {
-  background-color: black;
-}
-.modal-button,
-#done {
-  background: var(--red-radialgrad);
-  /* border: 1px solid white; */
-  bottom: 0px;
-  padding: 0.4rem 0.7rem;
-  text-align: center;
-  border-radius: 6px;
-}
-
-.wrapper {
-  z-index: 99;
-  grid-column: 2 / 8;
-  margin-inline: auto;
-}
-
-.accordion-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 500ms;
-}
-
-.accordion-content[aria-hidden="false"] {
-  grid-template-rows: 1fr;
-}
-
-.accordion-content > div {
-  overflow: hidden;
+  background: var(--dark-bg);
 }
 
 .accordion {
   background: var(--dark-bg);
   padding: 1rem;
+  z-index: 99;
+  grid-column: 2 / 8;
+  margin-inline: auto;
 }
-
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms;
+}
+.accordion-content[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+.accordion-content > div {
+  overflow: hidden;
+}
 .accordion-panel {
   padding: 1rem;
   border: 10px solid;
@@ -200,18 +224,15 @@ input[type="radio"]:checked {
   border-width: 5px;
   border-image-source: var(--red-grad);
 }
-
 .accordion h2 {
   position: relative;
 }
-
 .accordion-trigger {
   background: transparent;
   border: 0;
   font: inherit;
   color: inherit;
 }
-
 .accordion-trigger::before,
 .accordion-trigger::after {
   position: absolute;
@@ -223,19 +244,21 @@ input[type="radio"]:checked {
   background: currentcolor;
   transition: transform 500ms;
 }
-
 .accordion-trigger::after {
   rotate: 90deg;
   translate: 0 -1.5em;
 }
-
 .accordion-trigger[aria-expanded="true"]::before,
 .accordion-trigger[aria-expanded="true"]::after {
   transform: rotate(45deg);
 }
 
+footer {
+  grid-column: 1 / span 12;
+}
+
 @media (max-width: 767px) {
-  .wrapper {
+  .accordion {
     grid-column: 2 / span 10;
   }
   .page {
