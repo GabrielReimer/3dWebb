@@ -119,7 +119,6 @@ li > a {
 
 section {
   grid-column: 7 / span 5;
-  height: 18vh;
   padding: 1rem;
   background: var(--dark-bg);
   font-size: 1.25rem;
@@ -128,7 +127,8 @@ section {
 .modal-button,
 .done {
   background: var(--red-radialgrad);
-  /* padding: 0.4rem 0.7rem; */
+  margin-top: 1rem;
+  padding: 0.4rem 0.7rem;
   text-align: center;
   border-radius: 6px;
 }
@@ -138,28 +138,11 @@ section {
   flex-wrap: wrap;
   align-items: center;
 }
-
 .department label {
   margin-right: 0.3vw;
 }
 .department input[type="radio"] {
   margin-right: 1.58vw;
-}
-
-.sub-catagory {
-  background: var(--dark-bg);
-  justify-content: start;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.sub-catagory label {
-  margin-right: 0.2vw;
-}
-
-.sub-catagory input[type="radio"] {
-  margin-right: 1.2vw;
 }
 
 dialog[aria-hidden="false"] {
@@ -174,11 +157,6 @@ dialog[aria-hidden="false"] {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, 1fr);
 }
-
-dialog .sub-catagory {
-  grid-column: 1 / span 6;
-  grid-row: 1 / span 2;
-}
 dialog > button {
   grid-column: 4 / span 2;
   grid-row: 3 / 3;
@@ -188,15 +166,20 @@ dialog > input[type="submit"] {
   grid-row: 3 / 3;
 }
 
-dialog > h3 {
-  grid-column: 1 / span 6;
-  grid-row: 1 / 1;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-input[type="radio"]:checked {
+.sub-catagory {
   background: var(--dark-bg);
+  justify-content: start;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 2;
+}
+.sub-catagory label {
+  margin-right: 0.2vw;
+}
+.sub-catagory input[type="radio"] {
+  margin-right: 1.2vw;
 }
 
 .accordion {
