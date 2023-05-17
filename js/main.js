@@ -1,4 +1,4 @@
-import "/./style.css";
+import "/style.css";
 import * as THREE from "three";
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
@@ -40,7 +40,7 @@ const material = new THREE.MeshStandardMaterial( {color: 0x01332d, wireframe: tr
 const icosa = new THREE.Mesh(geometry, material);
 scene.add(icosa);*/
 
-const spheretexture = new THREE.TextureLoader().load("/./img/planetmap13.jpg");
+const spheretexture = new THREE.TextureLoader().load("./img/planetmap13.jpg");
 const planet = new THREE.Mesh(
   new THREE.SphereGeometry(600, 100, 16, 100),
   new THREE.MeshStandardMaterial({ map: spheretexture })
