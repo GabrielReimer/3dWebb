@@ -15,16 +15,16 @@
     <header>
       <nav>
         <ul>
-          <li><a href="#">JOIN US</a></li>
-          <li><a href="#">ENROLL</a></li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a tabindex="0" href="#">JOIN US</a></li>
+          <li><a tabindex="0" href="#">ENROLL</a></li>
+          <li><a tabindex="0" href="#">LANGUAGE</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="page">
       <div class="accordion">
-        <h1 style="text-align: center; font-size: 2rem">JOIN THE EMPIRE</h1>
+        <h1 tabindex="0">JOIN THE EMPIRE</h1>
 
         <div class="accordion-panel">
           <h2 id="panel1-title">
@@ -33,7 +33,7 @@
               aria-expanded="true"
               aria-controls="panel1-content"
             >
-              Why join?
+              Join Us
             </button>
           </h2>
           <div
@@ -59,7 +59,7 @@
               aria-expanded="false"
               aria-controls="panel2-content"
             >
-              We are all for peace
+              We stand for peace
             </button>
           </h2>
           <div
@@ -161,35 +161,45 @@
       </div>
 
       <section>
+        <h2>ENROLL</h2>
         <fieldset class="department">
-          <legend class="form-group">Request a Department:</legend>
+          <legend>Request a Department:</legend>
           <label for="army">Imperial Army</label>
-          <input type="radio" name="department" id="army" />
+          <input type="radio" name="department" id="army" value="army-sub" />
           <br />
-          <label for="marines">Imperial Marines</label>
-          <input type="radio" name="department" id="marines" />
+          <label for="academy">Academys</label>
+          <input
+            type="radio"
+            name="department"
+            id="academy"
+            value="academy-sub"
+          />
           <br />
           <label for="navy">Imperial Navy</label>
-          <input type="radio" name="department" id="navy" />
+          <input type="radio" name="department" id="navy" value="navy-sub" />
           <br />
           <label for="intel">Imperial Intelligence</label>
-          <input type="radio" name="department" id="intel" />
+          <input type="radio" name="department" id="intel" value="intel-sub" />
           <br />
           <label for="station">Battle Stations</label>
-          <input type="radio" name="department" id="station" />
+          <input
+            type="radio"
+            name="department"
+            id="station"
+            value="station-sub"
+          />
           <br />
         </fieldset>
 
-        <button class="modal-button" open-modal style="display: none">
-          Sub-Departments
+        <button class="modal-button" id="open-modal" style="display: none">
+          Sub-Catagories
         </button>
 
-        <dialog class="red-boarder" item-modal aria-hidden="true">
+        <dialog class="red-boarder" id="item-modal" aria-hidden="true">
           <fieldset
             class="sub-catagory"
             id="army-sub"
             style="display: none"
-            as
             aria-hidden="true"
           >
             <legend>Army branches:</legend>
@@ -206,9 +216,62 @@
 
           <fieldset
             class="sub-catagory"
+            id="academy-sub"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <legend>Academy Locations:</legend>
+            <label for="coruscant">Coruscant</label>
+            <input type="radio" name="sub-catagory" id="coruscant" />
+            <br />
+            <label for="lothal">Lothal</label>
+            <input type="radio" name="sub-catagory" id="lothal" />
+            <br />
+            <label for="arkanis">Arkanis</label>
+            <input type="radio" name="sub-catagory" id="arkanis" />
+            <br />
+          </fieldset>
+
+          <fieldset
+            class="sub-catagory"
+            id="navy-sub"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <legend>Navy branches:</legend>
+            <label for="starfighter">Imperial Starfighter Corps</label>
+            <input type="radio" name="sub-catagory" id="starfighter" />
+            <br />
+            <label for="orbitalcommand">Orbital Command</label>
+            <input type="radio" name="sub-catagory" id="orbitalcommand" />
+            <br />
+            <label for="fleet">7th Fleet</label>
+            <input type="radio" name="sub-catagory" id="fleet" />
+            <br />
+          </fieldset>
+
+          <fieldset
+            class="sub-catagory"
+            id="intel-sub"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <legend>Intelligence branches:</legend>
+            <label for="analysis">Analysis</label>
+            <input type="radio" name="sub-catagory" id="analysis" />
+            <br />
+            <label for="navyintel">Naval Intelligence Agency</label>
+            <input type="radio" name="sub-catagory" id="navyintel" />
+            <br />
+            <label for="deathtrooper">Death trooper</label>
+            <input type="radio" name="sub-catagory" id="deathtrooper" />
+            <br />
+          </fieldset>
+
+          <fieldset
+            class="sub-catagory"
             id="station-sub"
             style="display: none"
-            as
             aria-hidden="true"
           >
             <legend>Battle Station placements:</legend>
@@ -224,12 +287,19 @@
           </fieldset>
 
           <input type="submit" value="Submit" class="submit done" />
-
-          <button class="modal-button" close-modal>Close modal</button>
+          <button class="modal-button" id="close-modal">
+            Close Sub-Catagories
+          </button>
         </dialog>
       </section>
 
-      <footer></footer>
+      <footer>
+        <fieldset>
+          <legend>Change Language:</legend>
+          <button class="lang" id="langstar">Aurebesh</button>
+          <button class="lang" id="langeng">English</button>
+        </fieldset>
+      </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type="module" src="js/main.js"></script>

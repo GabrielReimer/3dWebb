@@ -30,52 +30,47 @@ function toggleAccordion(panelToActivate) {
 //var test = $("#ruta").val();
 
 /*Modal*/
-const modal = document.querySelector("[item-modal]");
-const openbutton = document.querySelector("[open-modal]");
-const closebutton = document.querySelector("[close-modal]");
+const modal = document.getElementById("item-modal");
+const openbutton = document.getElementById("open-modal");
+const closebutton = document.getElementById("close-modal");
 
 openbutton.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", false);
-  modal.showDialog();
+  modal.show();
 });
 closebutton.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", true);
   modal.close();
 });
 
-/*RADIOBUTTONS*/
-//const stationSub = document.getElementById("station-sub");
+const langStar = document.getElementById("langstar");
+const langEng = document.getElementById("langeng");
+const body = document.querySelector("body");
+langStar.addEventListener("click", () => {
+  body.style.fontFamily = "Aurebesh";
 
-$('input[type="radio"]').on("change", function (e) {
-  console.log("works");
-
-  $(".modal-button").show();
-  if (document.getElementById("army").checked) {
-    $("#army-sub").show();
-    $("#station-sub").hide();
-  } else if (document.getElementById("marines").checked) {
-    $("#station-sub").hide();
-  } else if (document.getElementById("navy").checked) {
-    $("#station-sub").hide();
-  } else if (document.getElementById("intel").checked) {
-    $("#station-sub").hide();
-  } else if (document.getElementById("station").checked) {
-    $("#station-sub").show();
-    $("#army-sub").hide();
-  }
+  langEng.style.fontFamily = "system-ui";
+});
+langEng.addEventListener("click", () => {
+  body.style.fontFamily = "system-ui";
 });
 
-/*function validate() {
-  console.log("works");
-  if (document.getElementById("army").checked) {
-    modal.showModal();
-  } else if (document.getElementById("marines").checked) {
-  } else if (document.getElementById("navy").checked) {
-  } else if (document.getElementById("inte").checked) {
-  } else if (document.getElementById("stations").checked) {
-  }
-}
-function init() {
-  document.getElementById("form").onsubmit = validate;
-}
-window.onload = init;*/
+/*RADIOBUTTONS*/
+
+$(".department")
+  .on('input[type="radio"]')
+  .on("change", function (event) {
+    const id = event.target.value;
+    $(".modal-button").show();
+    openbutton.setAttribute("aria-hidden", false);
+
+    $(".sub-catagory")
+      .not("#" + id)
+      .hide();
+    $(".sub-catagory")
+      .not("#" + id)
+      .attr("aria-hidden", true);
+
+    $("#" + id).show();
+    $("#" + id).attr("aria-hidden", false);
+  });

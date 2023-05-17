@@ -11,6 +11,7 @@ fieldset {
   margin: 0;
   min-width: 0;
 }
+
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --spacing: 3;
@@ -39,7 +40,6 @@ fieldset {
   --grey-hide: hsla(0, 0%, 0%, 0.2);
   /*font-family: brandon-grotesque, sans-serif;*/
   font-weight: 400;
-  font-style: normal;
 }
 .red-boarder {
   border: 10px solid;
@@ -59,9 +59,7 @@ h1,
 h2,
 h3,
 blockquote {
-  font-family: elevon, sans-serif;
   font-weight: 700;
-  font-style: normal;
 }
 
 body {
@@ -69,6 +67,10 @@ body {
   font-size: 1.25rem;
   line-height: 1.5;
   height: 150vh;
+}
+@font-face {
+  font-family: Aurebesh;
+  src: url(Aurebesh.otf);
 }
 
 header {
@@ -80,7 +82,7 @@ header {
   height: 6rem;
 }
 nav {
-  width: 40%;
+  width: auto;
   display: inherit;
   align-items: center;
   margin-left: auto;
@@ -97,11 +99,13 @@ nav > ul {
   text-align: center;
   align-items: center;
   list-style: none;
+  padding-left: 1rem;
 }
 
 li > a {
   text-decoration: none;
-  font-size: clamp(0.5rem, 2.5vw, 2rem);
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  margin-right: 2rem;
   font-weight: 600;
 }
 
@@ -116,71 +120,10 @@ li > a {
   grid-template-columns: repeat(12, 1fr);
   gap: 4rem;
 }
-
-section {
-  grid-column: 7 / span 5;
-  padding: 1rem;
-  background: var(--dark-bg);
-  font-size: 1.25rem;
-}
-
-.modal-button,
-.done {
-  background: var(--red-radialgrad);
-  margin-top: 1rem;
-  padding: 0.4rem 0.7rem;
+h1 {
   text-align: center;
-  border-radius: 6px;
+  font-size: 2rem;
 }
-
-.department {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.department label {
-  margin-right: 0.3vw;
-}
-.department input[type="radio"] {
-  margin-right: 1.58vw;
-}
-
-dialog[aria-hidden="false"] {
-  width: 30rem;
-  aspect-ratio: 3/1;
-  left: auto;
-  translate: -73%;
-  z-index: 10;
-  background: var(--dark-bg);
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-dialog > button {
-  grid-column: 4 / span 2;
-  grid-row: 3 / 3;
-}
-dialog > input[type="submit"] {
-  grid-column: 2 / span 2;
-  grid-row: 3 / 3;
-}
-
-.sub-catagory {
-  justify-content: start;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  grid-column: 1 / span 6;
-  grid-row: 1 / span 2;
-}
-.sub-catagory label {
-  margin-right: 0.2vw;
-}
-.sub-catagory input[type="radio"] {
-  margin-right: 1.2vw;
-}
-
 .accordion {
   background: var(--dark-bg);
   padding: 1rem;
@@ -201,10 +144,7 @@ dialog > input[type="submit"] {
 }
 .accordion-panel {
   padding: 1rem;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: var(--red-grad);
+  border: 2px solid white;
 }
 .accordion h2 {
   position: relative;
@@ -214,6 +154,7 @@ dialog > input[type="submit"] {
   border: 0;
   font: inherit;
   color: inherit;
+  text-align: start;
 }
 .accordion-trigger::before,
 .accordion-trigger::after {
@@ -235,12 +176,78 @@ dialog > input[type="submit"] {
   transform: rotate(45deg);
 }
 
+section {
+  grid-column: 7 / span 5;
+  padding: 1rem;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  border: 2px solid white;
+}
+.department {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.department label {
+  margin-right: 0.3vw;
+}
+.department input[type="radio"] {
+  margin-right: 1.58vw;
+}
+
+.modal-button,
+.lang,
+.done {
+  background: var(--red-radialgrad);
+  margin-top: 1rem;
+  padding: 0.4rem 0.7rem;
+  text-align: center;
+  border-radius: 6px;
+}
+dialog[aria-hidden="false"] {
+  width: auto;
+  height: fit-content;
+  position: relative;
+  z-index: 10;
+  background: var(--dark-bg);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+dialog > button {
+  grid-column: 4 / span 2;
+}
+dialog > input[type="submit"] {
+  grid-column: 2 / span 2;
+}
+
+.sub-catagory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 2;
+}
+.sub-catagory label {
+  margin-right: 0.2vw;
+}
+.sub-catagory input[type="radio"] {
+  margin-right: 1.2vw;
+}
+
 footer {
   grid-column: 1 / span 12;
+  height: fit-content;
   background: var(--dark-bg);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1050px) {
+  @font-face {
+    font-family: Aurebesh;
+    src: url(Aurebesh-Condensed-Bold.otf);
+  }
   .accordion {
     grid-column: 2 / span 10;
   }

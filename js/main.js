@@ -45,7 +45,6 @@ const planet = new THREE.Mesh(
   new THREE.SphereGeometry(600, 100, 16, 100),
   new THREE.MeshStandardMaterial({ map: spheretexture })
 );
-planet.rotateX(-Math.PI / 2);
 planet.position.set(2000, -500, 5500);
 scene.add(planet);
 
@@ -68,13 +67,9 @@ scene.add(lightHelper, lightHelper2, gridHelper);
 /*Scroll animation*/
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-
   camera.position.z = 2000 + t * 1;
   camera.rotation.y = Math.PI / -8 + t * 0.0002;
-
   planet.position.z = t * 1;
-
-  // console.log(t);
 }
 document.body.onscroll = moveCamera;
 moveCamera();
