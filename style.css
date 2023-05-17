@@ -167,7 +167,6 @@ dialog > input[type="submit"] {
 }
 
 .sub-catagory {
-  background: var(--dark-bg);
   justify-content: start;
   display: flex;
   flex-wrap: wrap;
