@@ -68,7 +68,7 @@ body {
   font-family: system-ui;
   font-size: 1.25rem;
   line-height: 1.5;
-  height: 300vh;
+  height: 150vh;
 }
 
 header {
@@ -237,6 +237,7 @@ dialog > input[type="submit"] {
 
 footer {
   grid-column: 1 / span 12;
+  background: var(--dark-bg);
 }
 
 @media (max-width: 767px) {
