@@ -1,10 +1,10 @@
-import "././style.css";
-import * as THREE from "three";
+import "/./style.css";
+//import * as THREE from "three";
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { GLTFLoader } from "/js/GLTFLoader.js";
 const loader = new GLTFLoader();
 
-const a = loader.load(
+loader.load(
   "/./3dModels/star_destroyer.glb",
   function (gltf) {
     scene.add(gltf.scene);
