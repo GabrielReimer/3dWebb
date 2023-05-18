@@ -5,7 +5,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 const loader = new GLTFLoader();
 
 loader.load(
-  "/./3dModels/star_destroyer.glb",
+  "./3dModels/star_destroyer.glb",
   function (gltf) {
     scene.add(gltf.scene);
   },
