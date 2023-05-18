@@ -2,7 +2,9 @@ const accordion = document.querySelector(".accordion");
 
 accordion.addEventListener("click", (e) => {
   const activePanel = e.target.closest(".accordion-panel");
-  if (!activePanel) return;
+  if (!activePanel) {
+    return;
+  }
   toggleAccordion(activePanel);
 });
 
@@ -50,7 +52,7 @@ closebutton.addEventListener("click", () => {
 
 /*RADIOBUTTONS AND CATAGORIES*/
 $(".department")
-  .on('input[type="radio"]')
+  .on("input[type='radio']")
   .on("change", function (event) {
     const id = event.target.value;
 
@@ -59,24 +61,23 @@ $(".department")
 
     $(".sub-catagory")
       .not("#" + id)
-      .hide();
+      .attr("aria-hidden", true);
     $(".sub-catagory")
       .not("#" + id)
-      .attr("aria-hidden", true);
+      .hide();
 
-    $("#" + id).show();
     $("#" + id).attr("aria-hidden", false);
+    $("#" + id).show();
   });
 
 /*Submit and designation display*/
 const designation = document.getElementById("designation");
 $(".sub-catagory")
-  .on('input[type="radio"]')
+  .on("input[type='radio']")
   .on("change", function (event) {
     getSubmit.addEventListener("click", () => {
-      console.log("aa");
-      $(".placement").show();
       $(".placement").attr("aria-hidden", false);
+      $(".placement").show();
       designation.innerHTML = event.target.value;
     });
   });
