@@ -196,7 +196,7 @@ section {
 
 .modal-button,
 .lang,
-.done {
+#done {
   background: var(--red-radialgrad);
   padding: 0.4rem 0.7rem;
   text-align: center;

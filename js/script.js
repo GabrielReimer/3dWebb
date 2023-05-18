@@ -43,24 +43,12 @@ closebutton.addEventListener("click", () => {
   modal.close();
 });
 
-const langStar = document.getElementById("langstar");
-const langEng = document.getElementById("langeng");
-const body = document.querySelector("body");
-langStar.addEventListener("click", () => {
-  body.style.fontFamily = "Aurebesh";
-
-  langEng.style.fontFamily = "system-ui";
-});
-langEng.addEventListener("click", () => {
-  body.style.fontFamily = "system-ui";
-});
-
-/*RADIOBUTTONS*/
-
+/*RADIOBUTTONS AND CATAGORIES*/
 $(".department")
   .on('input[type="radio"]')
   .on("change", function (event) {
     const id = event.target.value;
+
     $(".modal-button").show();
     openbutton.setAttribute("aria-hidden", false);
 
@@ -74,3 +62,29 @@ $(".department")
     $("#" + id).show();
     $("#" + id).attr("aria-hidden", false);
   });
+
+/*Submit and designation display*/
+const getSubmit = document.getElementById("done");
+const designation = document.getElementById("designation");
+$(".sub-catagory")
+  .on('input[type="radio"]')
+  .on("change", function (event) {
+    getSubmit.addEventListener("click", () => {
+      console.log("aa");
+      $(".placement").show();
+      designation.innerHTML = event.target.value;
+    });
+  });
+
+/*Language/font-change */
+const langStar = document.getElementById("langstar");
+const langEng = document.getElementById("langeng");
+const body = document.querySelector("body");
+
+langStar.addEventListener("click", () => {
+  body.style.fontFamily = "Aurebesh";
+  langEng.style.fontFamily = "system-ui";
+});
+langEng.addEventListener("click", () => {
+  body.style.fontFamily = "system-ui";
+});

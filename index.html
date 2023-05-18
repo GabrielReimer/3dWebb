@@ -199,11 +199,26 @@
           >
             <legend>Army branches:</legend>
             <label for="specialforces">Special Forces Command</label>
-            <input type="radio" name="sub-catagory" id="specialforces" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="specialforces"
+              value="Special Forces Command"
+            />
             <label for="stormtrooper">Stormtrooper Corps</label>
-            <input type="radio" name="sub-catagory" id="stormtrooper" />
-            <label for="armytrooper">Imperial Army troopers</label>
-            <input type="radio" name="sub-catagory" id="armytrooper" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="stormtrooper"
+              value="Stormtrooper"
+            />
+            <label for="armytrooper">Imperial Army trooper</label>
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="armytrooper"
+              value="Imperial Army Trooper"
+            />
           </fieldset>
 
           <fieldset
@@ -214,11 +229,26 @@
           >
             <legend>Academy Locations:</legend>
             <label for="coruscant">Coruscant</label>
-            <input type="radio" name="sub-catagory" id="coruscant" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="coruscant"
+              value="Coruscant Royal Academy"
+            />
             <label for="lothal">Lothal</label>
-            <input type="radio" name="sub-catagory" id="lothal" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="lothal"
+              value="Lothal Academy"
+            />
             <label for="arkanis">Arkanis</label>
-            <input type="radio" name="sub-catagory" id="arkanis" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="arkanis"
+              value="Arkanis Academy"
+            />
           </fieldset>
 
           <fieldset
@@ -229,11 +259,26 @@
           >
             <legend>Navy branches:</legend>
             <label for="starfighter">Imperial Starfighter Corps</label>
-            <input type="radio" name="sub-catagory" id="starfighter" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="starfighter"
+              value="Imperial Starfighter Corps"
+            />
             <label for="orbitalcommand">Orbital Command</label>
-            <input type="radio" name="sub-catagory" id="orbitalcommand" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="orbitalcommand"
+              value="Orbital Command"
+            />
             <label for="fleet">7th Fleet</label>
-            <input type="radio" name="sub-catagory" id="fleet" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="fleet"
+              value="7th Fleet"
+            />
           </fieldset>
 
           <fieldset
@@ -244,11 +289,26 @@
           >
             <legend>Intelligence branches:</legend>
             <label for="analysis">Analysis</label>
-            <input type="radio" name="sub-catagory" id="analysis" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="analysis"
+              value="Analysis"
+            />
             <label for="navyintel">Naval Intelligence Agency</label>
-            <input type="radio" name="sub-catagory" id="navyintel" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="navyintel"
+              value="Naval Intelligence Agency"
+            />
             <label for="deathtrooper">Death trooper</label>
-            <input type="radio" name="sub-catagory" id="deathtrooper" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="deathtrooper"
+              value="Death trooper"
+            />
           </fieldset>
 
           <fieldset
@@ -259,18 +319,44 @@
           >
             <legend>Battle Station placements:</legend>
             <label for="deathstar">Death Star</label>
-            <input type="radio" name="sub-catagory" id="deathstar" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="deathstar"
+              value="Death Star Technician"
+            />
             <label for="colossus">Colossus</label>
-            <input type="radio" name="sub-catagory" id="colossus" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="colossus"
+              value="Colossus Technician"
+            />
             <label for="shieldgate">Shield Gate</label>
-            <input type="radio" name="sub-catagory" id="shieldgate" />
+            <input
+              type="radio"
+              name="sub-catagory"
+              id="shieldgate"
+              value="Shield Gate Command"
+            />
           </fieldset>
 
-          <input type="submit" value="Submit" class="submit done" />
+          <input
+            type="submit"
+            name="sub-catagory"
+            value="Submit"
+            class="submit"
+            id="done"
+          />
           <button class="modal-button" id="close-modal">
             Close Catagories
           </button>
         </dialog>
+      </section>
+
+      <section class="placement" style="display: none" aria-hidden="true">
+        <h2>Your formal designation will be:</h2>
+        <p id="designation"></p>
       </section>
 
       <footer>
