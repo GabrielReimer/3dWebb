@@ -199,7 +199,12 @@
           />
         </fieldset>
 
-        <button class="modal-button" id="open-modal" style="display: none">
+        <button
+          class="modal-button"
+          id="open-modal"
+          style="display: none"
+          aria-hidden="true"
+        >
           Show Sub-Catagories
         </button>
 
@@ -360,8 +365,9 @@
             value="Submit"
             class="submit"
             id="done"
+            aria-hidden="true"
           />
-          <button class="modal-button" id="close-modal">
+          <button class="modal-button" id="close-modal" aria-hidden="true">
             Close Catagories
           </button>
         </dialog>

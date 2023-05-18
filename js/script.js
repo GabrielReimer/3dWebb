@@ -33,13 +33,18 @@ function toggleAccordion(panelToActivate) {
 const modal = document.getElementById("item-modal");
 const openbutton = document.getElementById("open-modal");
 const closebutton = document.getElementById("close-modal");
+const getSubmit = document.getElementById("done");
 
 openbutton.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", false);
+  closebutton.setAttribute("aria-hidden", false);
+  getSubmit.setAttribute("aria-hidden", false);
   modal.show();
 });
 closebutton.addEventListener("click", () => {
   modal.setAttribute("aria-hidden", true);
+  closebutton.setAttribute("aria-hidden", true);
+  getSubmit.setAttribute("aria-hidden", true);
   modal.close();
 });
 
@@ -64,7 +69,6 @@ $(".department")
   });
 
 /*Submit and designation display*/
-const getSubmit = document.getElementById("done");
 const designation = document.getElementById("designation");
 $(".sub-catagory")
   .on('input[type="radio"]')
@@ -72,6 +76,7 @@ $(".sub-catagory")
     getSubmit.addEventListener("click", () => {
       console.log("aa");
       $(".placement").show();
+      $(".placement").attr("aria-hidden", false);
       designation.innerHTML = event.target.value;
     });
   });
