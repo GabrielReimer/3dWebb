@@ -257,7 +257,9 @@ footer {
   height: max-content;
   background: var(--dark-bg);
   display: flex;
-  justify-content: space-around;
+  justify-content: baseline;
+  align-items: center;
+  text-align: center;
 }
 
 @media (max-width: 1100px) {

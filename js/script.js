@@ -52,7 +52,7 @@ closebutton.addEventListener("click", () => {
 
 /*RADIOBUTTONS AND CATAGORIES*/
 $(".department")
-  .on("input[type='radio']")
+  .find("input[type='radio']")
   .on("change", function (event) {
     const id = event.target.value;
 
@@ -73,7 +73,7 @@ $(".department")
 /*Submit and designation display*/
 const designation = document.getElementById("designation");
 $(".sub-catagory")
-  .on("input[type='radio']")
+  .find("input[type='radio']")
   .on("change", function (event) {
     getSubmit.addEventListener("click", () => {
       $(".placement").attr("aria-hidden", false);
