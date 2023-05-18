@@ -88,3 +88,21 @@ langStar.addEventListener("click", () => {
 langEng.addEventListener("click", () => {
   body.style.fontFamily = "system-ui";
 });
+
+/*Navigation animation*/
+$("#langNav").click(function () {
+  $("html,body").animate(
+    {
+      scrollTop: $("footer").offset().top,
+    },
+    500
+  );
+});
+$("#home").click(function () {
+  $("html,body").animate(
+    {
+      scrollTop: $("body").offset().top,
+    },
+    500
+  );
+});
