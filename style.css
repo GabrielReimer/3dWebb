@@ -234,10 +234,10 @@ dialog > input[type="submit"] {
   grid-column: 1 / span 6;
 }
 .sub-catagory label {
-  margin-right: 0.5vw;
+  margin-right: 0.6vw;
 }
 .sub-catagory input[type="radio"] {
-  margin-right: 1.2vw;
+  margin-right: 1.3vw;
 }
 
 .placement {
