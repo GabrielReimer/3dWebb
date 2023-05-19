@@ -3,6 +3,7 @@
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
   --light-bg: hsla(0, 0%, 15%, 0.95);
+  --light-bg-filled: hsla(0, 0%, 15%, 1);
   --red-grad: linear-gradient(
     90deg,
     rgba(159, 11, 11, 1) 2%,
@@ -64,8 +65,9 @@ body {
 
 header {
   position: fixed;
+  width: auto;
+  right: 0;
   z-index: 99;
-  width: 100%;
   display: flex;
   margin-top: 1rem;
   height: 6rem;
@@ -73,7 +75,6 @@ header {
 nav {
   width: auto;
   display: inherit;
-  margin-left: auto;
   background: var(--light-bg);
   padding: 0.5rem;
 }
@@ -265,6 +266,9 @@ footer div {
     src: url(Aurebesh-Condensed-Bold.otf);
   }
 
+  nav {
+    background: var(--light-bg-filled);
+  }
   .page {
     gap: 2rem 0;
   }
