@@ -56,6 +56,20 @@ h3,
 blockquote {
   font-weight: 700;
 }
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+input[type="radio"] {
+  cursor: pointer;
+  appearance: none;
+  padding: 7px;
+  background: white;
+  border-radius: 100%;
+}
+input[type="radio"]:checked {
+  background: var(--red-radialgrad);
+}
 
 body {
   font-family: system-ui;
@@ -185,16 +199,6 @@ section {
 }
 .department input[type="radio"] {
   margin-right: 1.58vw;
-}
-input[type="radio"] {
-  cursor: pointer;
-  appearance: none;
-  padding: 7px;
-  background: white;
-  border-radius: 100%;
-}
-input[type="radio"]:checked {
-  background: var(--red-radialgrad);
 }
 
 .modal-button,
