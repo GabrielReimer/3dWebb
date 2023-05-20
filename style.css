@@ -104,7 +104,7 @@ nav > ul {
 li > a,
 li > button {
   text-decoration: none;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-size: clamp(1rem, 2.5vw, 2rem);
   margin-right: 2rem;
   font-weight: 600;
   background: none;
@@ -322,5 +322,17 @@ footer div p {
   }
   dialog > input[type="submit"] {
     grid-column: 1 / span 6;
+  }
+  footer div p {
+    font-size: 0.8rem;
+  }
+  footer .cred {
+    flex-wrap: wrap;
+  }
+}
+
+@media (main-width: 460px) {
+  footer div {
+    flex-wrap: wrap;
   }
 }
