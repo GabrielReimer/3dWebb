@@ -331,7 +331,7 @@ footer div p {
   }
 }
 
-@media (main-width: 460px) {
+@media (max-width: 356px) {
   footer div {
     flex-wrap: wrap;
   }
