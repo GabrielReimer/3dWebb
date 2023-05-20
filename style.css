@@ -73,6 +73,7 @@ input[type="radio"]:checked {
 
 body {
   font-family: system-ui;
+  background: black;
   font-size: 1.25rem;
   line-height: 1.5;
 }
