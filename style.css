@@ -172,8 +172,8 @@ h1 {
   transition: transform 500ms;
 }
 .accordion-trigger::after {
-  transform: rotate(90deg);
-  transform: translate(0, -1.5em);
+  rotate: 90deg;
+  translate: 0 -1.5em;
 }
 .accordion-trigger[aria-expanded="true"]::before,
 .accordion-trigger[aria-expanded="true"]::after {
