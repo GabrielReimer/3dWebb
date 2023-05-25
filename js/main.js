@@ -48,11 +48,6 @@ const pointLight2 = new THREE.PointLight(0xffddaa, 1, 3500);
 pointLight2.position.set(300, -200, 800);
 scene.add(pointLight, pointLight2);
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const lightHelper2 = new THREE.PointLightHelper(pointLight2);
-const gridHelper = new THREE.GridHelper(200, 50);
-scene.add(lightHelper, lightHelper2, gridHelper);
-
 /*Scroll animation*/
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
